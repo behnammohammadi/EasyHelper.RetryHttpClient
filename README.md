@@ -20,11 +20,11 @@ $ dotnet add package EasyHelper.RetryHttpClient
 
 Now you can use SelectorAttribute in your code:
 ```csharp
-	using EasyHelper.RetryHttpClient.Extensions;
+using EasyHelper.RetryHttpClient.Extensions;
 ```
 ```csharp
-  var client = _httpClientFactory.CreateClient();
-            var result = await client.RetryGetAsync("https://github.com", 5, 3000));
+var client = _httpClientFactory.CreateClient();
+var result = await client.RetryGetAsync("https://github.com", 5, 3000));
 ```
 that attempt to call 3 times in case of failure with 5000 millisecond interval.
 
