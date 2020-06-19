@@ -15,10 +15,10 @@ namespace EasyHelper.RetryHttpClient.Extensions
         /// <param name="tryCount">Max try count if SuccessStatusCode equal to false</param>
         /// <param name="interval">Interval between calls in millisecond</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public static Task<HttpResponseMessage> RetryDeleteAsync(this HttpClient httpClient, string requestUri, int tryCount, int interval = 0)
+        public static async Task<HttpResponseMessage> RetryDeleteAsync(this HttpClient httpClient, string requestUri, int tryCount, int interval = 0)
         {
-            return RetryProvider.Retry
-                (() => httpClient.DeleteAsync(requestUri), tryCount, interval);
+            return await RetryProvider.Retry
+                (async () => await httpClient.DeleteAsync(requestUri), tryCount, interval);
         }
 
         /// <summary>
@@ -29,10 +29,10 @@ namespace EasyHelper.RetryHttpClient.Extensions
         /// <param name="tryCount">Max try count if SuccessStatusCode equal to false</param>
         /// <param name="interval">Interval between calls in millisecond</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public static Task<HttpResponseMessage> RetryDeleteAsync(this HttpClient httpClient, Uri requestUri, int tryCount, int interval = 0)
+        public static async Task<HttpResponseMessage> RetryDeleteAsync(this HttpClient httpClient, Uri requestUri, int tryCount, int interval = 0)
         {
-            return RetryProvider.Retry
-                (() => httpClient.DeleteAsync(requestUri), tryCount, interval);
+            return await RetryProvider.Retry
+                (async () => await httpClient.DeleteAsync(requestUri), tryCount, interval);
         }
 
         /// <summary>
@@ -43,10 +43,10 @@ namespace EasyHelper.RetryHttpClient.Extensions
         /// <param name="tryCount">Max try count if SuccessStatusCode equal to false</param>
         /// <param name="interval">Interval between calls in millisecond</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public static Task<HttpResponseMessage> RetryDeleteAsync(this HttpClient httpClient, string requestUri, CancellationToken cancellationToken, int tryCount, int interval = 0)
+        public static async Task<HttpResponseMessage> RetryDeleteAsync(this HttpClient httpClient, string requestUri, CancellationToken cancellationToken, int tryCount, int interval = 0)
         {
-            return RetryProvider.Retry
-                (() => httpClient.DeleteAsync(requestUri, cancellationToken), tryCount, interval);
+            return await RetryProvider.Retry
+                (async () => await httpClient.DeleteAsync(requestUri, cancellationToken), tryCount, interval);
         }
 
         /// <summary>
@@ -57,10 +57,10 @@ namespace EasyHelper.RetryHttpClient.Extensions
         /// <param name="tryCount">Max try count if SuccessStatusCode equal to false</param>
         /// <param name="interval">Interval between calls in millisecond</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public static Task<HttpResponseMessage> RetryDeleteAsync(this HttpClient httpClient, Uri requestUri, CancellationToken cancellationToken, int tryCount, int interval = 0)
+        public static async Task<HttpResponseMessage> RetryDeleteAsync(this HttpClient httpClient, Uri requestUri, CancellationToken cancellationToken, int tryCount, int interval = 0)
         {
-            return RetryProvider.Retry
-                (() => httpClient.DeleteAsync(requestUri, cancellationToken), tryCount, interval);
+            return await RetryProvider.Retry
+                (async () => await httpClient.DeleteAsync(requestUri, cancellationToken), tryCount, interval);
         }
 
     }

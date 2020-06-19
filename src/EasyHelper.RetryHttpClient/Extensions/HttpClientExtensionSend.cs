@@ -14,10 +14,10 @@ namespace EasyHelper.RetryHttpClient.Extensions
         /// <param name="tryCount">Max try count if SuccessStatusCode equal to false</param>
         /// <param name="interval">Interval between calls in millisecond</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public static Task<HttpResponseMessage> RetrySendAsync(this HttpClient httpClient, HttpRequestMessage request, int tryCount, int interval = 0)
+        public static async Task<HttpResponseMessage> RetrySendAsync(this HttpClient httpClient, HttpRequestMessage request, int tryCount, int interval = 0)
         {
-            return RetryProvider.Retry
-                (() => httpClient.SendAsync(request), tryCount, interval);
+            return await RetryProvider.Retry
+                (async () => await httpClient.SendAsync(request), tryCount, interval);
         }
 
         /// <summary>
@@ -28,11 +28,11 @@ namespace EasyHelper.RetryHttpClient.Extensions
         /// <param name="tryCount">Max try count if SuccessStatusCode equal to false</param>
         /// <param name="interval">Interval between calls in millisecond</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public static Task<HttpResponseMessage> RetrySendAsync(this HttpClient httpClient, HttpRequestMessage request,
+        public static async Task<HttpResponseMessage> RetrySendAsync(this HttpClient httpClient, HttpRequestMessage request,
             CancellationToken cancellationToken, int tryCount, int interval = 0)
         {
-            return RetryProvider.Retry
-                (() => httpClient.SendAsync(request, cancellationToken), tryCount, interval);
+            return await RetryProvider.Retry
+                (async () => await httpClient.SendAsync(request, cancellationToken), tryCount, interval);
         }
 
         /// <summary>
@@ -43,10 +43,10 @@ namespace EasyHelper.RetryHttpClient.Extensions
         /// <param name="tryCount">Max try count if SuccessStatusCode equal to false</param>
         /// <param name="interval">Interval between calls in millisecond</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public static Task<HttpResponseMessage> RetrySendAsync(this HttpClient httpClient, HttpRequestMessage request, HttpCompletionOption completionOption, int tryCount, int interval = 0)
+        public static async Task<HttpResponseMessage> RetrySendAsync(this HttpClient httpClient, HttpRequestMessage request, HttpCompletionOption completionOption, int tryCount, int interval = 0)
         {
-            return RetryProvider.Retry
-                (() => httpClient.SendAsync(request, completionOption), tryCount, interval);
+            return await RetryProvider.Retry
+                (async () => await httpClient.SendAsync(request, completionOption), tryCount, interval);
         }
 
         /// <summary>
@@ -58,11 +58,11 @@ namespace EasyHelper.RetryHttpClient.Extensions
         /// <param name="tryCount">Max try count if SuccessStatusCode equal to false</param>
         /// <param name="interval">Interval between calls in millisecond</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public static Task<HttpResponseMessage> RetrySendAsync(this HttpClient httpClient, HttpRequestMessage request, HttpCompletionOption completionOption,
-            CancellationToken cancellationToken, int tryCount, int interval = 0)
+        public static async Task<HttpResponseMessage> RetrySendAsync(this HttpClient httpClient, HttpRequestMessage request, HttpCompletionOption completionOption,
+            CancellationToken cancellationToken, int tryCount, int interval)
         {
-            return RetryProvider.Retry
-                (() => httpClient.SendAsync(request, completionOption, cancellationToken), tryCount, interval);
+            return await RetryProvider.Retry
+                (async () => await httpClient.SendAsync(request, completionOption, cancellationToken), tryCount, interval);
         }
     }
 }
