@@ -1,0 +1,38 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101
+    - name: Install dependencies
+      run: |
+        cd src
+        dotnet restore
+    - name: Clean
+      run: rm src/EasyHelper.RetryHttpClient/bin/Release/*.nupkg
+    - name: Build
+      run: |
+        cd src
+        dotnet build --configuration Release --no-restore 
+    - name: Test
+      run: |
+        cd src
+        dotnet test --no-restore --verbosity normal
+    - name: Deploy
+      run: |
+        cd src/EasyHelper.RetryHttpClient/bin/Release
+        dotnet nuget push *.nupkg -k ${{ secrets.nuget_key }} -s "https://www.nuget.org"
+  
