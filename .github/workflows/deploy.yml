@@ -22,7 +22,7 @@ jobs:
         cd src
         dotnet restore
     - name: Clean
-      run: rm src/EasyHelper.RetryHttpClient/bin/Release/*.nupkg
+      run: rm src/EasyHelper.RetryHttpClient/bin/Release/*.nupkg || true
     - name: Build
       run: |
         cd src
