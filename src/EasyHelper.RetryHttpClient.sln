@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyHelper.RetryHttpClient"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyHelper.RetryHttpClient.Api", "EasyHelper.RetryHttpClient.Api\EasyHelper.RetryHttpClient.Api.csproj", "{668980F0-E7E4-432D-88D7-025B11305FD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyHelper.RetryHttpClientTests", "EasyHelper.RetryHttpClientTests\EasyHelper.RetryHttpClientTests.csproj", "{1CF69046-52E8-462B-AE01-2E2F4E64463D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyHelper.RetryHttpClientTests", "EasyHelper.RetryHttpClientTests\EasyHelper.RetryHttpClientTests.csproj", "{1CF69046-52E8-462B-AE01-2E2F4E64463D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3BFFE9AA-80DE-4BB5-A171-DDF8B0C4E76B}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

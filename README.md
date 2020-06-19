@@ -29,3 +29,26 @@ Now you can use SelectorAttribute in your code:
 that attempt to call 3 times in case of failure with 5000 millisecond interval.
 
 # Available methods
+```
+RetryDeleteAsync(Uri, CancellationToken)
+RetryDeleteAsync(String, CancellationToken)
+RetryDeleteAsync(String)
+RetryDeleteAsync(Uri)
+RetryGetAsync(Uri, CancellationToken)
+RetryGetAsync(Uri, HttpCompletionOption, CancellationToken)
+RetryGetAsync(String, HttpCompletionOption, CancellationToken)
+RetryGetAsync(Uri, HttpCompletionOption)
+RetryGetAsync(String)
+RetryPostAsync(Uri, HttpContent, CancellationToken)
+RetryPostAsync(String, HttpContent, CancellationToken)
+RetryPostAsync(String, HttpContent)
+RetryPostAsync(Uri, HttpContent)
+RetryPutAsync(Uri, HttpContent, CancellationToken)
+RetryPutAsync(String, HttpContent)
+RetryPutAsync(Uri, HttpContent)
+RetryPutAsync(String, HttpContent, CancellationToken)
+RetrySendAsync(HttpRequestMessage, CancellationToken)
+RetrySendAsync(HttpRequestMessage, HttpCompletionOption, CancellationToken)
+RetrySendAsync(HttpRequestMessage)
+RetrySendAsync(HttpRequestMessage, HttpCompletionOption)
+```

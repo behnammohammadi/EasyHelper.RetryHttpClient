@@ -11,7 +11,6 @@ namespace EasyHelper.RetryHttpClient.Extensions
         /// <summary>
         /// Send retriable PUT request to the specified parameters as an asynchronous operation.
         /// </summary>
-        /// <param name="httpClient"></param>
         /// <param name="requestUri">The Uri the request is sent to.</param>
         /// <param name="content">The HTTP request content sent to the server.</param>
         /// <param name="tryCount">Max try count if SuccessStatusCode equal to false</param>
@@ -26,7 +25,6 @@ namespace EasyHelper.RetryHttpClient.Extensions
         /// <summary>
         /// Send retriable PUT request to the specified parameters as an asynchronous operation.
         /// </summary>
-        /// <param name="httpClient"></param>
         /// <param name="requestUri">The Uri the request is sent to.</param>
         /// <param name="content">The HTTP request content sent to the server.</param>
         /// <param name="tryCount">Max try count if SuccessStatusCode equal to false</param>
@@ -41,7 +39,6 @@ namespace EasyHelper.RetryHttpClient.Extensions
         /// <summary>
         /// Send retriable PUT request to the specified parameters as an asynchronous operation.
         /// </summary>
-        /// <param name="httpClient"></param>
         /// <param name="requestUri">The Uri the request is sent to.</param>
         /// <param name="content">The HTTP request content sent to the server.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -58,7 +55,6 @@ namespace EasyHelper.RetryHttpClient.Extensions
         /// <summary>
         /// Send retriable PUT request to the specified parameters as an asynchronous operation.
         /// </summary>
-        /// <param name="httpClient"></param>
         /// <param name="requestUri">The Uri the request is sent to.</param>
         /// <param name="content">The HTTP request content sent to the server.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>

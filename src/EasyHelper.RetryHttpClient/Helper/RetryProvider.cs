@@ -13,12 +13,12 @@ namespace EasyHelper.RetryHttpClient.Helper
         /// <param name="retryCount">Retry count if failure happened</param>
         /// <param name="interval">Interval between retries</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public static async Task<T> Retry<T>(Func<Task<T>> func, int retryCount, int interval) where T : HttpResponseMessage
+        public static async Task<T> Retry<T>(Func<Task<T>> method, int retryCount, int interval) where T : HttpResponseMessage
         {
             T result = null;
             try
             {
-                result = await func().ConfigureAwait(false);
+                result = await method().ConfigureAwait(false);
 
                 if (result.IsSuccessStatusCode)
                 {
@@ -38,7 +38,7 @@ namespace EasyHelper.RetryHttpClient.Helper
                 try
                 {
                     await Task.Delay(interval).ConfigureAwait(false);
-                    result = await func().ConfigureAwait(false);
+                    result = await method().ConfigureAwait(false);
                     if (result.IsSuccessStatusCode)
                     {
                         break;
