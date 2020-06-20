@@ -5,9 +5,11 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Behnam Mohammadi</Authors>
-    <Version>1.0.2</Version>
-    <AssemblyVersion>1.0.2.0</AssemblyVersion>
-    <FileVersion>1.0.2.0</FileVersion>
+    <Version>1.0.3</Version>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
+    <Description>Retry HttpClient actions with consider time interval and occurence.
+await client.RetryGetAsync("https://github.com", 5, 3000));</Description>
   </PropertyGroup>
 
 </Project>
