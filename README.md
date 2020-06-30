@@ -18,7 +18,7 @@ or through .NET CLI utility:
 $ dotnet add package EasyHelper.RetryHttpClient
 ```
 
-Now you can use SelectorAttribute in your code:
+Now you can use extensions in your code:
 ```csharp
 using EasyHelper.RetryHttpClient.Extensions;
 ```
